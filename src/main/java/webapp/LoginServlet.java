@@ -19,7 +19,13 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		PrintWriter writer = response.getWriter();
-		writer.write("FirstServlet");
+		writer.write("<html>");
+		writer.write("<head>");
+		writer.write("<title>Yahoo!!!!!</title>");
+		writer.write("</head>");
+		writer.write("<body>");
+		writer.write("</body>");
+		writer.write("</html>");
 	}
 
 }
