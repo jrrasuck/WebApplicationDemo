@@ -1,7 +1,6 @@
-package webapp;
+package com.in28minutes;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,15 +16,11 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		PrintWriter writer = response.getWriter();
-		writer.write("<html>");
-		writer.write("<head>");
-		writer.write("<title>Yahoo!!!!!</title>");
-		writer.write("</head>");
-		writer.write("<body>");
-		writer.write("</body>");
-		writer.write("</html>");
+		
+		String parameter = request.getParameter("name");
+		request.setAttribute("name", parameter);
+		
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
 
 }
